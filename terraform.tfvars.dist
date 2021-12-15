@@ -1,0 +1,5 @@
+app                     = "punk-do-devops"
+host                    = "clusters[0].cluster.server"
+cluster_ca_certificate  = "clusters[0].cluster.certificate-authority-data"
+client_certificate      = "users[0].user.client-certificate-data"
+client_key              = "users[0].user.client-key-data"
