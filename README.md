@@ -25,6 +25,7 @@ access via
 ```
 http://localhost:30201
 ```
+![punk-do-devops](./pics/punk-do-devops.png)
 
 
 * links
