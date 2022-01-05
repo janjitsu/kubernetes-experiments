@@ -31,5 +31,7 @@ resource "kubernetes_deployment" "punk-do-devops" {
       }
     }
   }
+
+  depends_on = [module.kind_cluster]
 }
 

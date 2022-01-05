@@ -1,7 +1,7 @@
 module "kind_cluster" {
   source                = "pepodev/cluster/kind"
   version               = "~> 0.1"
-  cluster_name          = "linux-tips"
+  cluster_name          = var.cluster_name
   nodes                 = [{
     role                    = "control-plane"
     kubeadm_config_patches  = []
@@ -13,4 +13,3 @@ module "kind_cluster" {
     }
   }]
 }
-

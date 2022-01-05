@@ -2,6 +2,8 @@ resource "kubernetes_service_account" "gitlab" {
   metadata {
     name = "gitlab"
   }
+
+  depends_on = [module.kind_cluster]
 }
 
 resource "kubernetes_cluster_role_binding" "gitlab-rbac" {
@@ -18,5 +20,7 @@ resource "kubernetes_cluster_role_binding" "gitlab-rbac" {
     name      = "gitlab"
     namespace = "default"
   }
+
+  depends_on = [module.kind_cluster]
 }
 

@@ -7,18 +7,13 @@ This is a simple exercise to deploy a simple cluster to kind using terraform
 
 create cluster
 ```
-terraform apply -target=module.kind_cluster
+terraform apply -target=module.kind_cluster -auto-approve && \
+terraform apply -auto-approve
 ```
 
-get credentials
+destroy clusters
 ```
-kubectl config view --minify --flatten --context=kind-linux-tips
-```
-copy terraform.tfvar.dist and set credentials on terraform.tfvars
-
-apply pod and service deployment
-```
-terraform apply
+terraform destroy -auto-approve
 ```
 
 access via

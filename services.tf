@@ -14,8 +14,11 @@ resource "kubernetes_service" "app" {
 
     type = "NodePort"
   }
+
+  depends_on = [module.kind_cluster]
 }
 
+/*
 resource "kubernetes_service" "go-web-api" {
   metadata {
     name = "go-web-api"
@@ -33,3 +36,4 @@ resource "kubernetes_service" "go-web-api" {
     type = "NodePort"
   }
 }
+*/
