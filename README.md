@@ -7,13 +7,20 @@ This is a simple exercise to deploy a simple cluster to kind using terraform
 
 create cluster
 ```
-terraform apply -target=module.kind_cluster -auto-approve && \
+terraform apply -target=kind_cluster.default -auto-approve && \
 terraform apply -auto-approve
 ```
 
 destroy clusters
 ```
 terraform destroy -auto-approve
+```
+
+rebuild cluster
+```
+terraform destroy -auto-approve && \
+terraform apply -target=kind_cluster.default -auto-approve && \
+terraform apply -auto-approve
 ```
 
 access via
@@ -25,3 +32,4 @@ http://localhost:30201
 
 * links
 [kubernetes-provider](https://learn.hashicorp.com/tutorials/terraform/kubernetes-provider)
+[ingress-nginx-kind](https://nickjanetakis.com/blog/configuring-a-kind-cluster-with-nginx-ingress-using-terraform-and-helm)

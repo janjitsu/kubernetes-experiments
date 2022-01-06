@@ -3,7 +3,7 @@ resource "kubernetes_service_account" "gitlab" {
     name = "gitlab"
   }
 
-  depends_on = [module.kind_cluster]
+  depends_on = [kind_cluster.default]
 }
 
 resource "kubernetes_cluster_role_binding" "gitlab-rbac" {
@@ -21,6 +21,6 @@ resource "kubernetes_cluster_role_binding" "gitlab-rbac" {
     namespace = "default"
   }
 
-  depends_on = [module.kind_cluster]
+  depends_on = [kind_cluster.default]
 }
 
